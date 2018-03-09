@@ -22,7 +22,7 @@ router.post('/', jsonParser, (req, res) => {
       console.error(message);
       return res.status(400).send(message);
     };
-  }
+  };
   const post = BlogPosts.create(req.body.title, req.body.content, req.body.author);
   res.status(201).json(post);
 });
@@ -58,7 +58,7 @@ router.put(':/id', jsonParser, (req, res) => {
     author: req.body.author,
     publishDate: req.body.publishDate,
   });
-  res.status(204).end():
+  res.status(204).end();
 })
 
 module.exports = router;

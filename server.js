@@ -5,7 +5,7 @@ const app = express();
 
 const blogPostsRouter = require('./blogPostsRouter');
 
-app.use(morgan('common'));
+app.use(morgan('commonnpm install'));
 
 
 app.use('/blog-posts', blogPostsRouter);
