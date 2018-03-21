@@ -33,8 +33,8 @@ router.delete('/:id', (req, res) => {
   res.status(204).end();
 });
 
-router.put(':/id', jsonParser, (req, res) => {
-  const requiredFields = ['id', 'title', 'content', 'author', 'publishDate'];
+router.put('/:id', jsonParser, (req, res) => {
+  const requiredFields = ['id', 'title', 'content', 'author'];
   for(let i=0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -43,6 +43,7 @@ router.put(':/id', jsonParser, (req, res) => {
       return res.status(400).send(message);
     };
   }
+
   if (req.params.id !== req.body.id) {
     const message = (
       `Request path id (${req.params.id}) and request body id `
